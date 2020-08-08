@@ -20,7 +20,7 @@ public class CardDeliveryTest {
     @Test
     void shouldSubmitRequest() {
         open("http://localhost:7777/");
-        $("[data-test-id='city'] input").setValue("Санкт-Петербург");
+        $("[data-test-id=city] input").setValue("Санкт-Петербург");
         $("[data-test-id='date'] input").doubleClick().sendKeys(Keys.BACK_SPACE);
         $("[data-test-id='date'] input").sendKeys(dateFormat.format(bookingDate));
         $("[data-test-id='name'] input").setValue("Иван Иванов");
@@ -33,7 +33,7 @@ public class CardDeliveryTest {
     @Test
     void shouldNotSubmitIfCityIsWrong(){
         open("http://localhost:7777");
-        $("[data-test-id='city'] input").setValue("Кондопога");
+        $("[data-test-id=city] input").setValue("Кондопога");
         $("[data-test-id='date'] input").doubleClick().sendKeys(Keys.BACK_SPACE);
         $("[data-test-id='date'] input").sendKeys(dateFormat.format(bookingDate));
         $("[data-test-id='name'] input").setValue("Иван Иванов");
@@ -46,7 +46,7 @@ public class CardDeliveryTest {
     @Test
     void shouldNotSubmitIfBookingIsBeforeThreeDays(){
         open("http://localhost:7777/");
-        $("[data-test-id='city'] input").setValue("Краснодар");
+        $("[data-test-id=city] input").setValue("Краснодар");
         $("[data-test-id='date'] input").doubleClick().sendKeys(Keys.BACK_SPACE);
         $("[data-test-id='date'] input").sendKeys("10.08.2020");
         $("[data-test-id='name'] input").setValue("Иван Петров");
@@ -59,7 +59,7 @@ public class CardDeliveryTest {
     @Test
     void shouldNotSubmitIfEnglishName(){
         open("http://localhost:7777");
-        $("[data-test-id='city'] input").setValue("Москва");
+        $("[data-test-id=city] input").setValue("Москва");
         $("[data-test-id='date'] input").doubleClick().sendKeys(Keys.BACK_SPACE);
         $("[data-test-id='date'] input").sendKeys(dateFormat.format(bookingDate));
         $("[data-test-id='name'] input").setValue("Ivan Ivanov");
@@ -73,7 +73,7 @@ public class CardDeliveryTest {
     @Test
     void shouldNotSubmitIfPhoneIsWrong(){
         open("http://localhost:7777");
-        $("[data-test-id='city'] input").setValue("Саратов");
+        $("[data-test-id=city] input").setValue("Саратов");
         $("[data-test-id='date'] input").doubleClick().sendKeys(Keys.BACK_SPACE);
         $("[data-test-id='date'] input").sendKeys(dateFormat.format(bookingDate));
         $("[data-test-id='name'] input").setValue("Иван Сидоров");
@@ -87,7 +87,7 @@ public class CardDeliveryTest {
     @Test
     void shouldNotSubmitIfCheckboxUnchecked() {
         open("http://localhost:7777");
-        $("[data-test-id='city'] input").setValue("Новгород");
+        $("[data-test-id=city] input").setValue("Новгород");
         $("[data-test-id='date'] input").doubleClick().sendKeys(Keys.BACK_SPACE);
         $("[data-test-id='date'] input").sendKeys(dateFormat.format(bookingDate));
         $("[data-test-id='name'] input").setValue("Петр Иванов");

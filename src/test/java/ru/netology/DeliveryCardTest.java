@@ -21,7 +21,7 @@ public class DeliveryCardTest {
     @Test
     void shouldSearchCityByTwoLetters(){
         open("http://localhost:7777");
-        $("[data-test-id='city'] input").sendKeys("Мо");
+        $("[data-test-id=city] input").sendKeys("Мо");
         $$(".menu-item").find(exactText("Москва")).click();
         $(".input__icon").click();
         $("[data-test-id='date'] input").doubleClick().sendKeys(Keys.BACK_SPACE);
