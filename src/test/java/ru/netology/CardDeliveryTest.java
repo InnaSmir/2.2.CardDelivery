@@ -28,7 +28,6 @@ public class CardDeliveryTest {
         $("[data-test-id='agreement'] .checkbox__box").click();
         $(".button").click();
         $(withText("Успешно!")).waitUntil(visible, 11000);
-
     }
 
     @Test
